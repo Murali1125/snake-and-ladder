@@ -5,6 +5,7 @@
 # the player rools the die to get a number between 1 to 6
 # the player then checks for a option, they are no play, ladder or snake
 # repete till the player reaches the winning possition 100
+# ensure the player gets to exact winning position 100
 #-------------------------------------------------------------------------------------
 
 
