@@ -7,6 +7,7 @@
 # repete till the player reaches the winning possition 100
 # ensure the player gets to exact winning position 100
 # report the number of times the dice was played to win the game and also the position after every die role
+# play the game with two players and report which player won the game
 #----------------------------------------------------------------------------------------------------------
 
 
@@ -18,11 +19,19 @@ function snake_and_ladder() {
 	player=player01
 	# declare players variables
 	player1_pos=0
-	
+	player2_pos=0
 
 	#loop until reached to 100
 	while [ $possition -lt 100 ]
 	do
+		# set the players possitions
+		if [ "$player" == "player01" ]
+		then
+			possition=$player1_pos
+		else
+			possition=$player2_pos
+		fi
+
 		#get the random die number
 		dice_number=$(( RANDOM % 6 + 1 ))
 
@@ -56,6 +65,18 @@ function snake_and_ladder() {
 				fi
 				echo "possition : $possition" ;;
 		esac
+
+		# switch the players
+		if [ "$player" == "player01" ]
+		then
+			player1_pos=$possition
+			player=player02
+		else
+			player2_pos=$possition
+			player=player01
+		fi
 	done
 	echo " number of  times rool dice : $count "
 }
+
+ snake_and_ladder()
