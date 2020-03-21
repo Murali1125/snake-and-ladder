@@ -6,7 +6,8 @@
 # the player then checks for a option, they are no play, ladder or snake
 # repete till the player reaches the winning possition 100
 # ensure the player gets to exact winning position 100
-#-------------------------------------------------------------------------------------
+# report the number of times the dice was played to win the game and also the position after every die role
+#----------------------------------------------------------------------------------------------------------
 
 
 function snake_and_ladder() {
@@ -56,4 +57,5 @@ function snake_and_ladder() {
 				echo "possition : $possition" ;;
 		esac
 	done
+	echo " number of  times rool dice : $count "
 }
